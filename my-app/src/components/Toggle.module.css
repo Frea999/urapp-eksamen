@@ -1,0 +1,29 @@
+.toggle,
+.toggleOn {
+  position: relative;
+  flex-shrink: 0;
+  width: 63px;
+  height: 28px;
+  border-radius: 14px;
+  background-color: #39393d;
+  transition: background-color 0.2s;
+}
+
+.toggleOn {
+  background-color: var(--green);
+}
+
+.thumb {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 37px;
+  height: 24px;
+  border-radius: 13px;
+  background-color: white;
+  transition: left 0.2s;
+}
+
+.toggleOn .thumb {
+  left: 24px;
+}

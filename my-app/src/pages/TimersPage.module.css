@@ -1,0 +1,159 @@
+/* Vælg tid */
+.picker {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 60px;
+}
+
+.highlight {
+  position: absolute;
+  top: 78px;
+  left: 16px;
+  right: 16px;
+  height: 34px;
+  border-radius: 17px;
+  background-color: #151517;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 19px;
+  padding: 0 20px;
+}
+
+.medium {
+  width: 72px;
+  height: 72px;
+}
+
+.tiny {
+  width: 56px;
+  height: 56px;
+}
+
+.small {
+  width: 80px;
+  height: 80px;
+  font-size: 16px;
+}
+
+.play {
+  margin-left: 4px;
+}
+
+.card {
+  margin: 20px 20px 0;
+  padding: 0 16px;
+  border-radius: 27px;
+  background-color: var(--dark-gray);
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 52px;
+  font-size: 17px;
+}
+
+.row:first-child {
+  border-bottom: 1px solid var(--line);
+}
+
+.gray {
+  color: var(--gray);
+}
+
+.darkGray {
+  color: #666669;
+}
+
+.recent {
+  margin-top: 52px;
+  padding: 0 30px;
+}
+
+.recent h2 {
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--line);
+  font-size: 20px;
+}
+
+.recentRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 0 10px;
+  border-bottom: 1px solid var(--line);
+}
+
+.recentTime {
+  font-size: 54px;
+  font-weight: 300;
+  color: var(--gray);
+}
+
+.recentLabel {
+  font-size: 16px;
+  color: #555555;
+}
+
+.deleteButton {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: #f14f48;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* Nedtælling */
+.ring {
+  position: relative;
+  width: 286px;
+  height: 286px;
+  margin: 40px auto 0;
+}
+
+.ring circle {
+  transition: stroke-dashoffset 1s linear;
+}
+
+.ringText {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.clock {
+  font-size: 59px;
+  font-weight: 100;
+  font-variant-numeric: tabular-nums;
+}
+
+.countdownButtons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 28px;
+  padding: 0 20px;
+}
+
+.orange {
+  background-color: #362511;
+  color: var(--orange);
+}
+
+.doneText {
+  margin-top: 28px;
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
+}
