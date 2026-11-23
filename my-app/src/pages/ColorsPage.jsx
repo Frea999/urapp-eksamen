@@ -1,16 +1,14 @@
-import { useState } from "react";
 import { Link } from "react-router";
 import styles from "./ColorsPage.module.css";
 import closeIcon from "../assets/icons/close.svg";
 import selectedIcon from "../assets/icons/selected.svg";
+import { themes } from "../themes";
 
-const backgroundColors = ["#488eff", "#fa86c4", "#4a8626", "#270404", "#2c2c2c", "#449793"];
+// Baggrundsfarverne er de samme som temaernes farver
+const backgroundColors = themes.map((theme) => theme.color);
 const accentColors = ["#ff9f43", ...backgroundColors];
 
-export default function ColorsPage() {
-  const [background, setBackground] = useState("#488eff");
-  const [accent, setAccent] = useState("#ff9f43");
-
+export default function ColorsPage({ design, setDesign }) {
   return (
     <main className={styles.page}>
       <div className={styles.topBar}>
@@ -29,9 +27,9 @@ export default function ColorsPage() {
             key={color}
             className={styles.color}
             style={{ backgroundColor: color }}
-            onClick={() => setBackground(color)}
+            onClick={() => setDesign({ ...design, color: color })}
           >
-            {background === color && <img src={selectedIcon} alt="Valgt" className={styles.check} />}
+            {design.color === color && <img src={selectedIcon} alt="Valgt" className={styles.check} />}
           </button>
         ))}
         <button className={styles.textButton}>Vælg en farve</button>
@@ -45,9 +43,9 @@ export default function ColorsPage() {
             key={color}
             className={styles.color}
             style={{ backgroundColor: color }}
-            onClick={() => setAccent(color)}
+            onClick={() => setDesign({ ...design, accent: color })}
           >
-            {accent === color && <img src={selectedIcon} alt="Valgt" className={styles.check} />}
+            {design.accent === color && <img src={selectedIcon} alt="Valgt" className={styles.check} />}
           </button>
         ))}
         <button className={styles.textButton}>Vælg en farve</button>

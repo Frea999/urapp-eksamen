@@ -12,7 +12,7 @@
   right: 0;
   height: 34px;
   border-radius: 17px;
-  background-color: var(--card);
+  background-color: var(--highlight);
 }
 
 .card {
@@ -20,6 +20,7 @@
   padding: 0 16px;
   border-radius: 28px;
   background-color: var(--card);
+  color: var(--card-text);
 }
 
 .row {
@@ -37,15 +38,15 @@
 }
 
 .gray {
-  color: var(--gray);
+  color: var(--card-muted);
 }
 
 .darkGray {
-  color: #69696d;
+  color: var(--card-muted);
 }
 
 .orange {
-  color: var(--orange);
+  color: var(--accent);
 }
 
 .days {
@@ -60,11 +61,12 @@
   height: 35px;
   border-radius: 50%;
   background-color: #414143;
+  color: var(--white);
   font-size: 17px;
   font-weight: 600;
 }
 
 .dayOn {
-  background-color: var(--orange);
+  background-color: var(--accent);
   color: black;
 }

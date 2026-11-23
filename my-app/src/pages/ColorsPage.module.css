@@ -38,5 +38,6 @@
 .textButton {
   height: 74px;
   background-color: #39393d;
+  color: var(--white);
   font-size: 15px;
 }

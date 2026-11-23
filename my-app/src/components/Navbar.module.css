@@ -8,9 +8,9 @@
   width: 360px;
   max-width: calc(100% - 32px);
   padding: 4px;
-  border: 1px solid #3b3b3b;
+  border: 1px solid var(--nav-border);
   border-radius: 31px;
-  background-color: #202020;
+  background-color: var(--nav);
 }
 
 .link,
@@ -25,20 +25,13 @@
   border-radius: 27px;
   font-size: 10px;
   font-weight: 600;
-}
-
-.link img,
-.active img {
-  height: 25px;
+  color: var(--text);
+  --icon-cut: var(--nav);
 }
 
 .active {
   width: 100px;
-  background-color: var(--black);
-  color: var(--orange);
-}
-
-/* Rediger-ikonet findes kun i hvid, så det farves orange med et filter */
-.active .editIcon {
-  filter: brightness(0) saturate(100%) invert(72%) sepia(60%) saturate(1200%) hue-rotate(335deg);
+  background-color: var(--nav-active);
+  color: var(--accent);
+  --icon-cut: var(--nav-active);
 }
