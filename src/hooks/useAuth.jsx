@@ -1,5 +1,5 @@
 import { createContext, useContext, useEffect, useState } from "react";
-import { supabase } from "../supabase";
+import { appUrl, supabase } from "../supabase";
 
 const AuthContext = createContext(null);
 
@@ -23,7 +23,7 @@ export function AuthProvider({ children }) {
     user: session ? session.user : null,
     loading,
     signIn: (email, password) => supabase.auth.signInWithPassword({ email, password }),
-    signUp: (email, password) => supabase.auth.signUp({ email, password }),
+    signUp: (email, password) => supabase.auth.signUp({ email, password, options: { emailRedirectTo: appUrl } }),
     signOut: () => supabase.auth.signOut(),
   };
 

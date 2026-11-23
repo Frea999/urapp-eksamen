@@ -86,7 +86,13 @@ export default function LoginPage() {
             {mode === "login" ? "Log ind" : "Opret"}
           </button>
           <button className={styles.switch} type="button" onClick={switchMode}>
-            {mode === "login" ? "Ingen bruger? Opret en" : "Har du en bruger? Log ind"}
+            {mode === "login" ? (
+              <>
+                Ingen bruger? <span className={styles.switchAction}>Opret en</span>
+              </>
+            ) : (
+              "Har du en bruger? Log ind"
+            )}
           </button>
         </form>
       )}
