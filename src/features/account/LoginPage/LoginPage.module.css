@@ -54,6 +54,10 @@
   font-size: 15px;
 }
 
+.switchAction {
+  color: var(--accent);
+}
+
 .error {
   color: var(--red);
   font-size: 15px;
