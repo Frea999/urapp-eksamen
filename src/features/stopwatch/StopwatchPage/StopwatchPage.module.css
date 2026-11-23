@@ -1,0 +1,98 @@
+.time {
+  margin-top: 57px;
+  font-size: min(80px, 22vw);
+  font-weight: 100;
+  font-variant-numeric: tabular-nums;
+  text-align: center;
+  transition: color 0.3s;
+}
+
+.timeRunning {
+  color: var(--text);
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 135px;
+  padding: 0 16px;
+}
+
+.button {
+  transition:
+    background-color 0.3s,
+    color 0.3s,
+    transform 0.15s,
+    opacity 0.3s;
+}
+
+.button:active:not(:disabled) {
+  transform: scale(0.92);
+}
+
+.button:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.fade {
+  animation: fade-in 0.25s ease;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+}
+
+.dots {
+  display: flex;
+  gap: 9px;
+}
+
+.dot,
+.dotWhite {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #777777;
+}
+
+.dotWhite {
+  background-color: white;
+}
+
+.laps {
+  margin: 16px 15px 0;
+  border-top: 1px solid var(--line);
+}
+
+.lap {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 17px;
+  animation: lap-in 0.3s ease;
+}
+
+.lapTime {
+  font-variant-numeric: tabular-nums;
+}
+
+.fastest {
+  color: var(--green);
+}
+
+.slowest {
+  color: var(--red);
+}
+
+@keyframes lap-in {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+}

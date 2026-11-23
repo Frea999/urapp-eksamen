@@ -1,4 +1,3 @@
-/* Farver fra Figma-designet */
 :root {
   --black: #000000;
   --white: #f7f7f7;
@@ -9,7 +8,6 @@
   --red: #ff6057;
   --red-dark: #351514;
 
-  /* Farver der skifter med temaet (her er det sorte standard-design) */
   --bg: #000000;
   --bg-image: none;
   --text: #f7f7f7;
@@ -36,7 +34,6 @@
   background-color: #111113;
 }
 
-/* Når et tema er valgt. Selve farverne kommer fra App.jsx */
 .themed {
   --page-card: var(--card);
   --selected: rgba(0, 0, 0, 0.1);
@@ -49,7 +46,6 @@
   --timer-highlight: var(--accent);
 }
 
-/* Lyse temaer har mørk tekst */
 .dark-text {
   --text: #39393d;
   --muted: #39393d;
@@ -68,22 +64,24 @@ body {
   min-height: 100vh;
 }
 
-/* Appen er kun til mobil, så den bliver aldrig bredere end en telefon */
 #root {
   max-width: 430px;
   margin: 0 auto;
 }
 
 .app {
+  position: relative;
   min-height: 100vh;
   padding: 16px 0 110px;
   color: var(--text);
   background-color: var(--bg);
   background-image: var(--bg-image);
-  background-size: 100% auto;
+  background-size: var(--bg-size, 100% auto);
+  background-position: var(--bg-position, 0 0);
+  /* Holder de flydende former (z-index: -1) bag indholdet, men foran baggrunden */
+  isolation: isolate;
 }
 
-/* Baggrunden glider langsomt opad, når temaet har animation */
 .animated {
   animation: float 40s linear infinite;
 }
@@ -94,6 +92,27 @@ body {
   }
   to {
     background-position: 0 -874px;
+  }
+}
+
+main {
+  animation: page-in 0.3s ease;
+}
+
+@keyframes page-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }
 
@@ -110,7 +129,6 @@ button {
   cursor: pointer;
 }
 
-/* Knapper der bruges på flere sider */
 .top-buttons {
   display: flex;
   justify-content: flex-end;

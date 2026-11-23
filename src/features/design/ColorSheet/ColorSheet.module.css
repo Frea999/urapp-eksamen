@@ -1,0 +1,74 @@
+.card {
+  margin-top: 24px;
+  padding: 0 16px;
+  border-radius: 28px;
+  background-color: var(--card);
+  color: var(--card-text);
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  height: 52px;
+  border-bottom: 1px solid var(--line);
+  font-size: 17px;
+}
+
+.row:last-child {
+  border-bottom: none;
+}
+
+.slider {
+  flex: 1;
+  max-width: 160px;
+  height: 28px;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.slider::-webkit-slider-runnable-track {
+  height: 12px;
+  border-radius: 6px;
+  background: linear-gradient(to right, black, var(--tint));
+}
+
+.slider::-moz-range-track {
+  height: 12px;
+  border-radius: 6px;
+  background: linear-gradient(to right, black, var(--tint));
+}
+
+.slider::-webkit-slider-thumb {
+  width: 28px;
+  height: 28px;
+  margin-top: -8px;
+  appearance: none;
+  border: 3px solid white;
+  border-radius: 50%;
+  background-color: var(--accent);
+}
+
+.slider::-moz-range-thumb {
+  width: 22px;
+  height: 22px;
+  border: 3px solid white;
+  border-radius: 50%;
+  background-color: var(--accent);
+}
+
+.value {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--card-muted);
+}
+
+.swatch {
+  width: 28px;
+  height: 28px;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+}

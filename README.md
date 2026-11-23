@@ -1,26 +1,16 @@
-# Ur-app
+Apple Ur Redesign
 
-Mobilapp bygget med [React](https://react.dev) og [Vite](https://vite.dev). Al styling er i CSS Modules (`*.module.css`), ikke Tailwind.
+Af Cecilie Schmidt og Fredrik Moellenberg
 
-Appen er kun til mobil: indholdet bliver aldrig bredere end en telefon (`--app-max-width` i `src/index.css`). På en computer vises den som en telefonbred kolonne midt på skærmen.
+Appen er lavet til mobile skærme.
+Der kræves login i forhold til sikkerhed.
 
-## Kom i gang
+Opgaver af elever:
 
-```bash
-npm install
-npm run dev
-```
+Fredrik
+- Opsætning af appen
+- Basis design opsætning
 
-Åbn [http://localhost:3000](http://localhost:3000).
-
-## Scripts
-
-- `npm run dev`: starter udviklingsserveren
-- `npm run build`: bygger til `dist/`
-- `npm run preview`: viser det byggede resultat
-- `npm run lint`: kører ESLint
-
-## Deploy
-
-Appen deployes automatisk til GitHub Pages, når der pushes til `main` (se `.github/workflows/deploy.yml`).
-Den ligger på [frea999.github.io/urapp-eksamen](https://frea999.github.io/urapp-eksamen/).
+Cecilie
+- Designs
+- Animationer

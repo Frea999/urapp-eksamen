@@ -1,0 +1,59 @@
+.wheel {
+  position: relative;
+  width: 100px;
+  height: 170px;
+}
+
+.scroller {
+  height: 100%;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  overscroll-behavior: contain;
+  scrollbar-width: none;
+  outline: none;
+  user-select: none;
+  cursor: grab;
+}
+
+.scroller::-webkit-scrollbar {
+  display: none;
+}
+
+.scroller:focus-visible {
+  border-radius: 17px;
+  box-shadow: 0 0 0 2px var(--accent);
+}
+
+.spacer {
+  height: 68px;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 34px;
+  font-size: 24px;
+  font-variant-numeric: tabular-nums;
+  scroll-snap-align: center;
+  opacity: 0.16;
+  transform: scale(0.55);
+}
+
+.withUnit .item {
+  justify-content: flex-end;
+  padding-right: 52px;
+  transform-origin: right center;
+}
+
+.unit {
+  position: absolute;
+  top: 68px;
+  left: 54px;
+  display: flex;
+  align-items: center;
+  height: 34px;
+  font-size: 17px;
+  color: var(--on-accent);
+  pointer-events: none;
+}

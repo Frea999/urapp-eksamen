@@ -1,0 +1,264 @@
+.stage {
+  position: relative;
+  height: 286px;
+}
+
+.picker,
+.ring {
+  transition:
+    opacity 0.45s ease,
+    transform 0.55s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.picker {
+  position: absolute;
+  top: 58px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  color: var(--white);
+}
+
+.highlight {
+  position: absolute;
+  top: 68px;
+  left: 16px;
+  right: 16px;
+  height: 34px;
+  border-radius: 17px;
+  background-color: var(--timer-highlight);
+}
+
+.ring {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 286px;
+  height: 286px;
+  margin-left: -143px;
+  opacity: 0;
+  transform: scale(0.65);
+  pointer-events: none;
+}
+
+.stage.active .picker {
+  opacity: 0;
+  transform: scale(1.35);
+  pointer-events: none;
+}
+
+.stage.active .ring {
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: auto;
+}
+
+.track {
+  stroke: var(--line);
+  opacity: 0.5;
+}
+
+.progress {
+  transition:
+    stroke-dashoffset 0.12s linear,
+    stroke 0.3s;
+}
+
+.ringText {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+}
+
+.clock {
+  font-size: 59px;
+  font-weight: 100;
+  font-variant-numeric: tabular-nums;
+}
+
+.endsAt {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  height: 20px;
+  font-size: 16px;
+  color: var(--muted);
+  transition: opacity 0.3s;
+}
+
+.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.fadeOut {
+  transition: opacity 0.3s;
+}
+
+.ringDone .ringText {
+  animation: pulse 1s ease-in-out infinite;
+}
+
+.ringDone .clock {
+  color: var(--green);
+}
+
+@keyframes pulse {
+  50% {
+    transform: scale(1.06);
+  }
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 4px;
+  padding: 0 20px;
+}
+
+.button {
+  width: 80px;
+  height: 80px;
+  font-size: 16px;
+  transition:
+    background-color 0.3s,
+    color 0.3s,
+    transform 0.15s,
+    opacity 0.3s;
+}
+
+.button:active:not(:disabled) {
+  transform: scale(0.92);
+}
+
+.button:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.fade {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fade-in 0.3s ease;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+}
+
+.orange {
+  background-color: var(--accent-dark);
+  color: var(--accent);
+}
+
+.tiny {
+  width: 56px;
+  height: 56px;
+}
+
+.play {
+  margin-left: 4px;
+}
+
+.card {
+  margin: 20px 20px 0;
+  padding: 0 16px;
+  border-radius: 27px;
+  background-color: var(--page-card);
+  color: var(--card-text);
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 52px;
+  font-size: 17px;
+}
+
+.row:first-child {
+  border-bottom: 1px solid var(--line);
+}
+
+.gray {
+  color: var(--card-muted);
+}
+
+.darkGray {
+  color: var(--card-muted);
+}
+
+.collapse {
+  display: grid;
+  grid-template-rows: 1fr;
+  transition:
+    grid-template-rows 0.45s ease,
+    opacity 0.3s ease;
+}
+
+.collapsed {
+  grid-template-rows: 0fr;
+  opacity: 0;
+}
+
+.recent {
+  min-height: 0;
+  margin-top: 52px;
+  padding: 0 30px;
+  overflow: hidden;
+}
+
+.recent h2 {
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--line);
+  font-size: 20px;
+}
+
+.recentRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 0 10px;
+  border-bottom: 1px solid var(--line);
+  overflow: hidden;
+}
+
+.recentInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.recentTime {
+  font-size: 54px;
+  font-weight: 300;
+  line-height: 1.2;
+  color: var(--muted);
+}
+
+.recentLabel {
+  font-size: 16px;
+  color: var(--muted);
+}
+
+.deleteButton {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: #f14f48;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  animation: fade-in 0.25s ease;
+}
