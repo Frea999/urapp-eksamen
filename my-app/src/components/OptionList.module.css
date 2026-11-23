@@ -3,6 +3,7 @@
   flex-direction: column;
   margin-top: 32px;
   background-color: var(--card);
+  color: var(--card-text);
 }
 
 .option,
@@ -16,5 +17,5 @@
 
 .selected {
   border-radius: 14px;
-  background-color: #333335;
+  background-color: var(--selected);
 }

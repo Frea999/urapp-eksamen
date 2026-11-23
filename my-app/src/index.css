@@ -4,17 +4,58 @@
   --white: #f7f7f7;
   --gray: #8e8e93;
   --dark-gray: #1c1c1e;
-  --card: #2b2b2d;
-  --line: #3a3a3c;
-  --orange: #ff9f43;
   --green: #63cf65;
   --green-dark: #122d16;
   --red: #ff6057;
   --red-dark: #351514;
 
+  /* Farver der skifter med temaet (her er det sorte standard-design) */
+  --bg: #000000;
+  --bg-image: none;
+  --text: #f7f7f7;
+  --muted: #8e8e93;
+  --dark: #1c1c1e;
+  --card: #2b2b2d;
+  --page-card: #1c1c1e;
+  --card-text: #f7f7f7;
+  --card-muted: #8e8e93;
+  --selected: #333335;
+  --line: #3a3a3c;
+  --accent: #ff9f43;
+  --accent-dark: #362511;
+  --pill: #202020;
+  --button: #1c1c1e;
+  --nav: #202020;
+  --nav-border: #3b3b3b;
+  --nav-active: #000000;
+  --highlight: #2b2b2d;
+  --timer-highlight: #151517;
+
   font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", system-ui, sans-serif;
   color: var(--white);
   background-color: #111113;
+}
+
+/* Når et tema er valgt. Selve farverne kommer fra App.jsx */
+.themed {
+  --page-card: var(--card);
+  --selected: rgba(0, 0, 0, 0.1);
+  --accent-dark: color-mix(in srgb, var(--accent) 45%, black);
+  --pill: var(--dark);
+  --button: #39393d;
+  --nav-border: var(--card);
+  --nav-active: var(--dark);
+  --highlight: var(--accent);
+  --timer-highlight: var(--accent);
+}
+
+/* Lyse temaer har mørk tekst */
+.dark-text {
+  --text: #39393d;
+  --muted: #39393d;
+  --card-text: #39393d;
+  --card-muted: #39393d;
+  --line: #39393d;
 }
 
 * {
@@ -30,10 +71,30 @@ body {
 /* Appen er kun til mobil, så den bliver aldrig bredere end en telefon */
 #root {
   max-width: 430px;
-  min-height: 100vh;
   margin: 0 auto;
+}
+
+.app {
+  min-height: 100vh;
   padding: 16px 0 110px;
-  background-color: var(--black);
+  color: var(--text);
+  background-color: var(--bg);
+  background-image: var(--bg-image);
+  background-size: 100% auto;
+}
+
+/* Baggrunden glider langsomt opad, når temaet har animation */
+.animated {
+  animation: float 40s linear infinite;
+}
+
+@keyframes float {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 0 -874px;
+  }
 }
 
 a {
@@ -63,7 +124,8 @@ button {
   min-width: 93px;
   padding: 0 16px;
   border-radius: 22px;
-  background-color: #202020;
+  background-color: var(--pill);
+  color: var(--white);
   font-size: 17px;
   font-weight: 500;
 }
@@ -79,7 +141,7 @@ button {
 }
 
 .orange-button {
-  background-color: #f39b44;
+  background-color: var(--accent);
 }
 
 .round-button {
@@ -89,7 +151,8 @@ button {
   width: 84px;
   height: 84px;
   border-radius: 50%;
-  background-color: var(--dark-gray);
+  background-color: var(--button);
+  color: var(--white);
   font-size: 17px;
 }
 

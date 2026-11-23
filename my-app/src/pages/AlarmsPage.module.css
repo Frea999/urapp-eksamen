@@ -1,6 +1,6 @@
 .list {
   margin: 16px 16px 0;
-  border-top: 1px solid #303030;
+  border-top: 1px solid var(--line);
 }
 
 .row,
@@ -10,7 +10,7 @@
   gap: 12px;
   height: 102px;
   padding-bottom: 11px;
-  border-bottom: 1px solid #303030;
+  border-bottom: 1px solid var(--line);
 }
 
 .rowSmall {
@@ -29,11 +29,11 @@
 .clockOn {
   font-size: 54px;
   font-weight: 300;
-  color: var(--gray);
+  color: var(--muted);
 }
 
 .clockOn {
-  color: var(--white);
+  color: var(--text);
 }
 
 .rowSmall .clock,
@@ -43,7 +43,7 @@
 
 .description {
   font-size: 15px;
-  color: var(--gray);
+  color: var(--muted);
 }
 
 .deleteButton {

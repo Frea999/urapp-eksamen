@@ -66,7 +66,7 @@ export default function TimersPage() {
               r="140"
               fill="none"
               strokeWidth="6"
-              stroke={isDone ? "#63cf65" : "#ff9f43"}
+              style={{ stroke: isDone ? "var(--green)" : "var(--accent)" }}
               strokeDasharray={circle}
               strokeDashoffset={isDone ? 0 : circle * (1 - progress)}
               transform="rotate(-90 143 143)"

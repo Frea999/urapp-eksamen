@@ -8,7 +8,9 @@
   width: 100%;
   max-width: 430px;
   padding-top: 16px;
-  background-color: var(--black);
+  background-color: var(--bg);
+  background-image: var(--bg-image);
+  background-size: 100% auto;
 }
 
 .sheet {
@@ -16,7 +18,8 @@
   padding: 16px;
   overflow-y: auto;
   border-radius: 43px 43px 0 0;
-  background-color: var(--dark-gray);
+  background-color: var(--dark);
+  color: var(--white);
 }
 
 .header {

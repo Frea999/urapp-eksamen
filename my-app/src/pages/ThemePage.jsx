@@ -1,29 +1,19 @@
-import { useState } from "react";
 import { Link } from "react-router";
 import Toggle from "../components/Toggle";
 import styles from "./ThemePage.module.css";
-import ocean from "../assets/themes/ocean.png";
-import hearts from "../assets/themes/hearts.png";
-import leaves from "../assets/themes/leaves.png";
-import ribbons from "../assets/themes/ribbons.png";
-import crosses from "../assets/themes/crosses.png";
-import web from "../assets/themes/web.png";
+import { themes } from "../themes";
 
-const themes = [
-  { name: "Hav", color: "#488eff", image: ocean, darkText: true },
-  { name: "Hjerter", color: "#fa86c4", image: hearts, darkText: true },
-  { name: "Blade", color: "#4a8626", image: leaves, darkText: true },
-  { name: "Bånd", color: "#449793", image: ribbons, darkText: true },
-  { name: "Kryds", color: "#270404", image: crosses, darkText: false },
-  { name: "Spind", color: "#2c2c2c", image: web, darkText: false },
-];
+export default function ThemePage({ theme, setTheme }) {
+  function chooseTheme(newTheme) {
+    // Temaer uden færdigt design gør ikke noget endnu
+    if (!newTheme.ready) return;
 
-export default function ThemePage() {
-  const [selectedTheme, setSelectedTheme] = useState(null);
-
-  function chooseTheme(name) {
-    // Klik på det valgte tema igen for at slå det fra
-    setSelectedTheme(selectedTheme === name ? null : name);
+    // Klik på det valgte tema igen for at gå tilbage til det sorte standard-design
+    if (theme && theme.name === newTheme.name) {
+      setTheme(null);
+    } else {
+      setTheme(newTheme);
+    }
   }
 
   return (
@@ -36,19 +26,28 @@ export default function ThemePage() {
 
       <h1 className={styles.title}>Tema</h1>
 
-      {themes.map((theme) => (
+      {themes.map((item) => (
         <div
-          key={theme.name}
+          key={item.name}
           className={styles.theme}
-          style={{ backgroundColor: theme.color, backgroundImage: `url(${theme.image})` }}
+          style={{ backgroundColor: item.color, backgroundImage: `url(${item.banner})` }}
         >
-          <div className={theme.darkText ? styles.darkText : styles.whiteText}>
-            <p className={styles.name}>{theme.name}</p>
+          <div className={item.darkText ? styles.darkText : styles.whiteText}>
+            <p className={styles.name}>{item.name}</p>
             <p>Tema</p>
           </div>
-          <Toggle on={selectedTheme === theme.name} onClick={() => chooseTheme(theme.name)} />
+          <Toggle on={theme !== null && theme.name === item.name} onClick={() => chooseTheme(item)} />
         </div>
       ))}
+
+      {theme && theme.name === "Eget design" && (
+        <div className={styles.own}>
+          <p>Du bruger dit eget design</p>
+          <button className="pill-button" onClick={() => setTheme(null)}>
+            Slå fra
+          </button>
+        </div>
+      )}
     </main>
   );
 }
