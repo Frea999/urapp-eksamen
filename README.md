@@ -1,4 +1,4 @@
-# my-app
+# Ur-app
 
 Mobilapp bygget med [React](https://react.dev) og [Vite](https://vite.dev). Al styling er i CSS Modules (`*.module.css`), ikke Tailwind.
 
@@ -19,3 +19,8 @@ npm run dev
 - `npm run build`: bygger til `dist/`
 - `npm run preview`: viser det byggede resultat
 - `npm run lint`: kører ESLint
+
+## Deploy
+
+Appen deployes automatisk til GitHub Pages, når der pushes til `main` (se `.github/workflows/deploy.yml`).
+Den ligger på [frea999.github.io/urapp-eksamen](https://frea999.github.io/urapp-eksamen/).
