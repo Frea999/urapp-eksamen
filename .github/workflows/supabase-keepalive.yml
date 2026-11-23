@@ -1,0 +1,25 @@
+name: Supabase keep-alive
+
+on:
+  schedule:
+    # To gange om ugen, så gratisprojektet ikke bliver sat på pause efter 7 dages inaktivitet
+    - cron: "0 7 * * 1,4"
+  workflow_dispatch:
+
+permissions: {}
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    environment: SUPABASE
+    steps:
+      - name: Ping Supabase
+        env:
+          SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL || vars.VITE_SUPABASE_URL }}
+          SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY || vars.VITE_SUPABASE_ANON_KEY }}
+        run: |
+          # Læser fra databasen (RLS giver en tom liste uden login, men det tæller som aktivitet)
+          curl --fail --silent --show-error --retry 3 --retry-delay 10 \
+            "${SUPABASE_URL%/}/rest/v1/designs?select=id&limit=1" \
+            -H "apikey: ${SUPABASE_ANON_KEY}" \
+            -H "Authorization: Bearer ${SUPABASE_ANON_KEY}"
