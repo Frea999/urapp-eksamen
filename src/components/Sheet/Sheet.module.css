@@ -1,0 +1,75 @@
+.background {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  width: 100%;
+  max-width: 430px;
+  padding-top: 16px;
+  background-color: var(--bg);
+  background-image: var(--bg-image);
+  background-size: 100% auto;
+}
+
+.sheet {
+  height: 100%;
+  padding: 16px;
+  overflow-y: auto;
+  border-radius: 43px 43px 0 0;
+  background-color: var(--dark);
+  color: var(--white);
+  animation: slide-up 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.sheetClosing {
+  animation: slide-down 0.25s ease-in forwards;
+}
+
+.background {
+  animation: fade-in 0.35s ease;
+}
+
+.backgroundClosing {
+  animation: fade-out 0.25s ease-in forwards;
+}
+
+@keyframes slide-up {
+  from {
+    transform: translateY(100%);
+  }
+}
+
+@keyframes slide-down {
+  to {
+    transform: translateY(100%);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes fade-out {
+  to {
+    opacity: 0;
+  }
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.header h2 {
+  font-size: 17px;
+}
+
+.empty {
+  width: 44px;
+}

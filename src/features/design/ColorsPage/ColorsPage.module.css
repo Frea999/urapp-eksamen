@@ -1,0 +1,77 @@
+.page {
+  padding: 0 16px;
+}
+
+.page h1 {
+  margin: 16px 0 9px;
+  font-size: 34px;
+}
+
+.topBar {
+  display: flex;
+  justify-content: space-between;
+}
+
+.linkButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.color {
+  position: relative;
+  height: 74px;
+}
+
+.check {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+}
+
+.textButton {
+  position: relative;
+  height: 74px;
+  background-color: #39393d;
+  color: var(--white);
+  font-size: 15px;
+}
+
+.photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.photoText {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.fileInput {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.textButton:has(.fileInput:focus-visible) {
+  outline: 2px solid var(--accent);
+}
+
+.error {
+  margin-top: 12px;
+  color: var(--red);
+  font-size: 15px;
+}

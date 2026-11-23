@@ -1,0 +1,44 @@
+.wheel {
+  position: relative;
+  width: min(100%, 280px);
+  aspect-ratio: 1;
+  margin: 24px auto 0;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle closest-side, white, rgba(255, 255, 255, 0)),
+    conic-gradient(
+      hsl(0 100% 50%),
+      hsl(60 100% 50%),
+      hsl(120 100% 50%),
+      hsl(180 100% 50%),
+      hsl(240 100% 50%),
+      hsl(300 100% 50%),
+      hsl(360 100% 50%)
+    );
+  touch-action: none;
+  cursor: crosshair;
+  outline: none;
+}
+
+.wheel:focus-visible {
+  box-shadow: 0 0 0 2px var(--accent);
+}
+
+.shade {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background-color: black;
+  pointer-events: none;
+}
+
+.marker {
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  margin: -14px 0 0 -14px;
+  border: 3px solid white;
+  border-radius: 50%;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.4);
+  pointer-events: none;
+}

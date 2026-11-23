@@ -1,0 +1,37 @@
+.navbar {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  width: 360px;
+  max-width: calc(100% - 32px);
+  padding: 4px;
+  border: 1px solid var(--nav-border);
+  border-radius: 31px;
+  background-color: var(--nav);
+}
+
+.link,
+.active {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  width: 84px;
+  height: 53px;
+  border-radius: 27px;
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--text);
+  --icon-cut: var(--nav);
+}
+
+.active {
+  width: 100px;
+  background-color: var(--nav-active);
+  color: var(--nav-active-text, var(--accent));
+  --icon-cut: var(--nav-active);
+}

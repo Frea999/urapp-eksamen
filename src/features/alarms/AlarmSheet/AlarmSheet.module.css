@@ -1,0 +1,72 @@
+.picker {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+.highlight {
+  position: absolute;
+  top: 68px;
+  left: 0;
+  right: 0;
+  height: 34px;
+  border-radius: 17px;
+  background-color: var(--highlight);
+}
+
+.card {
+  margin-top: 35px;
+  padding: 0 16px;
+  border-radius: 28px;
+  background-color: var(--card);
+  color: var(--card-text);
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 52px;
+  border-bottom: 1px solid var(--line);
+  font-size: 17px;
+}
+
+.row:last-child {
+  border-bottom: none;
+}
+
+.gray {
+  color: var(--card-muted);
+}
+
+.darkGray {
+  color: var(--card-muted);
+}
+
+.orange {
+  color: var(--accent);
+}
+
+.days {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px 0;
+}
+
+.day,
+.dayOn {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-color: #414143;
+  color: var(--white);
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.dayOn {
+  background-color: var(--accent);
+  color: black;
+}
