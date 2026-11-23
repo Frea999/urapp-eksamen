@@ -1,0 +1,44 @@
+.navbar {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  width: 360px;
+  max-width: calc(100% - 32px);
+  padding: 4px;
+  border: 1px solid #3b3b3b;
+  border-radius: 31px;
+  background-color: #202020;
+}
+
+.link,
+.active {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  width: 84px;
+  height: 53px;
+  border-radius: 27px;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.link img,
+.active img {
+  height: 25px;
+}
+
+.active {
+  width: 100px;
+  background-color: var(--black);
+  color: var(--orange);
+}
+
+/* Rediger-ikonet findes kun i hvid, så det farves orange med et filter */
+.active .editIcon {
+  filter: brightness(0) saturate(100%) invert(72%) sepia(60%) saturate(1200%) hue-rotate(335deg);
+}

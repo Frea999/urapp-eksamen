@@ -1,0 +1,57 @@
+.list {
+  margin: 16px 16px 0;
+  border-top: 1px solid #303030;
+}
+
+.row,
+.rowSmall {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  height: 102px;
+  padding-bottom: 11px;
+  border-bottom: 1px solid #303030;
+}
+
+.rowSmall {
+  height: 82px;
+  padding-bottom: 0;
+}
+
+.time {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.clock,
+.clockOn {
+  font-size: 54px;
+  font-weight: 300;
+  color: var(--gray);
+}
+
+.clockOn {
+  color: var(--white);
+}
+
+.rowSmall .clock,
+.rowSmall .clockOn {
+  font-size: 42px;
+}
+
+.description {
+  font-size: 15px;
+  color: var(--gray);
+}
+
+.deleteButton {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background-color: #f14f48;
+  color: white;
+  font-weight: bold;
+  line-height: 1;
+}

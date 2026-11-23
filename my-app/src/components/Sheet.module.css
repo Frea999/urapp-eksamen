@@ -1,0 +1,35 @@
+.background {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  width: 100%;
+  max-width: 430px;
+  padding-top: 16px;
+  background-color: var(--black);
+}
+
+.sheet {
+  height: 100%;
+  padding: 16px;
+  overflow-y: auto;
+  border-radius: 43px 43px 0 0;
+  background-color: var(--dark-gray);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.header h2 {
+  font-size: 17px;
+}
+
+.empty {
+  width: 44px;
+}
